@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asal-Usul Gelar "Andi" — Jejak Kolonial di Sulawesi Selatan | KBDI</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=IM+Fell+English:ital@0;1&family=Josefin+Sans:wght@300;400;600;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=Bebas+Neue&display=swap" rel="stylesheet">
+<style>
+
+  /* ══════════════════════════════════════
+     DARK MODE — tema kolonial 1930 (default)
+  ══════════════════════════════════════ */
+  :root {
+    --bg-page:       #1a1208;
+    --bg-surface:    #231808;
+    --bg-card:       #2e1f0f;
+    --bg-card2:      #3b2a14;
+    --border-main:   rgba(200,134,26,0.32);
+    --border-strong: #c8861a;
+    --text-primary:  #f5e9cc;
+    --text-second:   #ede0b8;
+    --text-muted:    #d4c49a;
+    --text-faint:    #a89060;
+    --amber:         #c8861a;
+    --amber-lt:      #e8a83a;
+    --gold:          #c9a84c;
+    --gold-lt:       #e2c060;
+    --red:           #8b1a1a;
+    --masthead-bg:   linear-gradient(180deg,#0d0a04 0%,#1a1208 100%);
+    --hero-bg:       linear-gradient(135deg,#8b1a1a 0%,#5a0f0f 50%,#3b2a14 100%);
+    --factbox-bg:    linear-gradient(135deg,#3b2a14 0%,#2a1e0e 100%);
+    --pq-bg:         linear-gradient(135deg,rgba(59,42,20,.85) 0%,rgba(26,18,8,.92) 100%);
+    --pq-text:       #f5e9cc;
+    --cell-bg:       #1a1208;
+    --hdr-bg:        #3b2a14;
+    --vframe-bg:     linear-gradient(135deg,#3b2a14 0%,#241808 100%);
+    --ref-bg:        #0d0a04;
+    --hl-bg:         rgba(200,134,26,.28);
+    --hl-red:        rgba(139,26,26,.38);
+  }
+
+  /* ══════════════════════════════════════
+     LIGHT MODE — perkamen siang hari
+  ══════════════════════════════════════ */
+  html.light {
+    --bg-page:       #f5f0e8;
+    --bg-surface:    #fdf6e3;
+    --bg-card:       #efe8d8;
+    --bg-card2:      #e8dfc8;
+    --border-main:   rgba(140,80,10,.22);
+    --border-strong: #a0620e;
+    --text-primary:  #1c1208;
+    --text-second:   #2e1f08;
+    --text-muted:    #4a3318;
+    --text-faint:    #7a5a30;
+    --amber:         #a0620e;
+    --amber-lt:      #c07818;
+    --gold:          #9a7830;
+    --gold-lt:       #b89040;
+    --red:           #7a1010;
+    --masthead-bg:   linear-gradient(180deg,#e8dfc8 0%,#f5f0e8 100%);
+    --hero-bg:       linear-gradient(135deg,#7a1010 0%,#5a0808 50%,#6a4020 100%);
+    --factbox-bg:    linear-gradient(135deg,#ede4d0 0%,#e0d4b8 100%);
+    --pq-bg:         linear-gradient(135deg,rgba(232,224,200,.93) 0%,rgba(220,210,185,.97) 100%);
+    --pq-text:       #1c1208;
+    --cell-bg:       #f5f0e8;
+    --hdr-bg:        #e0d4b8;
+    --vframe-bg:     linear-gradient(135deg,#e8dfc8 0%,#ddd4b8 100%);
+    --ref-bg:        #e8dfc8;
+    --hl-bg:         rgba(160,98,14,.16);
+    --hl-red:        rgba(122,16,16,.14);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    font-family: 'Libre Baskerville', serif;
+    overflow-x: hidden;
+    transition: background-color .3s, color .3s;
+    padding-top: 68px;
+  }
+
+  /* Noise overlay */
+  body::before {
+    content:'';
+    position:fixed; inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none; z-index:9998; opacity:.22;
+  }
+
+  /* ── Corner ornaments ── */
+  .co {
+    position:fixed; width:100px; height:100px;
+    pointer-events:none; z-index:100; opacity:.18;
+    transition: opacity .3s;
+  }
+  html.light .co { opacity:.1; }
+  .co svg { width:100%; height:100%; }
+  .co.tl { top:68px; left:0; }
+  .co.tr { top:68px; right:0; transform:scaleX(-1); }
+  .co.bl { bottom:0; left:0; transform:scaleY(-1); }
+  .co.br { bottom:0; right:0; transform:scale(-1); }
+
+  /* ── Masthead ── */
+  .masthead {
+    background: var(--masthead-bg);
+    border-bottom: 3px double var(--amber);
+    padding: 2.5rem 2rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: background .3s, border-color .3s;
+    animation: fadeUp .7s ease both;
+  }
+  .masthead::before {
+    content:''; position:absolute; inset:0;
+    background:radial-gradient(ellipse at 50% 0%,rgba(200,134,26,.1) 0%,transparent 70%);
+    pointer-events:none;
+  }
+  .ms-label {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.6rem; letter-spacing:.42em;
+    text-transform:uppercase; color:var(--amber);
+    margin-bottom:.5rem; position:relative;
+  }
+  .ms-title {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(2.6rem,8vw,5.5rem);
+    font-weight:900; line-height:1;
+    color:var(--text-primary);
+    letter-spacing:-.02em; position:relative;
+    transition: color .3s;
+  }
+  .ms-title em { color:var(--amber); font-style:italic; }
+  .ms-rule {
+    display:flex; align-items:center;
+    gap:1rem; margin:1.3rem auto; max-width:520px;
+  }
+  .ms-rule span { flex:1; height:1px; background:var(--amber); opacity:.5; }
+  .ms-rule .dia { width:7px; height:7px; background:var(--amber); transform:rotate(45deg); }
+  .ms-sub {
+    font-family:'IM Fell English',serif; font-style:italic;
+    font-size:1.04rem; color:var(--text-muted);
+    margin-bottom:1.1rem; letter-spacing:.03em;
+    transition: color .3s;
+  }
+  .ms-meta {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.28em;
+    color:var(--amber); opacity:.62;
+    margin-bottom:1.4rem;
+  }
+
+  /* ── Hero band ── */
+  .hero {
+    background:var(--hero-bg);
+    padding:3.5rem 2rem; text-align:center;
+    position:relative; overflow:hidden;
+    animation: fadeUp .7s .15s ease both;
+  }
+  .hero::before {
+    content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.07) 10px,rgba(0,0,0,.07) 20px);
+  }
+  .hero::after {
+    content:''; position:absolute;
+    top:0; left:0; right:0; height:3px;
+    background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  }
+  .hero-q {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.25rem,3.5vw,2.1rem);
+    font-weight:700; font-style:italic;
+    color:#f5e9cc; line-height:1.46;
+    max-width:800px; margin:0 auto 1.4rem;
+    position:relative; z-index:1;
+    text-shadow:0 2px 18px rgba(0,0,0,.5);
+  }
+  .hero-sub {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.68rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--gold-lt);
+    position:relative; z-index:1;
+  }
+
+  /* ── Container ── */
+  .wrap { max-width:860px; margin:0 auto; padding:0 1.5rem; }
+
+  /* ── Divider ── */
+  .div {
+    display:flex; align-items:center;
+    gap:1rem; margin:3rem 0 2rem;
+  }
+  .div .ln { flex:1; height:1px; background:linear-gradient(90deg,transparent,var(--border-strong),transparent); }
+  .div .orn { font-family:'Playfair Display',serif; color:var(--amber); font-size:1.15rem; }
+
+  /* ── Article body ── */
+  .body { padding:3rem 0; }
+
+  .ch-lbl {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.5em;
+    text-transform:uppercase; color:var(--amber);
+    margin-bottom:.65rem; display:block;
+  }
+  .ch-title {
+    font-family:'Playfair Display',serif;
+    font-size:clamp(1.45rem,4vw,2.05rem);
+    font-weight:700; color:var(--text-primary);
+    line-height:1.26; margin-bottom:1.35rem;
+    border-left:4px solid var(--amber);
+    padding-left:1rem;
+    transition: color .3s, border-color .3s;
+  }
+  p {
+    font-size:1.03rem; line-height:1.88;
+    color:var(--text-second); margin-bottom:1.32rem;
+    transition: color .3s;
+  }
+  p strong { color:var(--text-primary); }
+  p em { color:var(--amber-lt); font-style:italic; }
+
+  /* Drop cap */
+  .dc::first-letter {
+    float:left;
+    font-family:'Playfair Display',serif;
+    font-size:4.2rem; font-weight:900;
+    line-height:.76; margin:.1em .13em 0 0;
+    color:var(--amber);
+  }
+
+  /* Pull quote */
+  .pq {
+    border-left:5px solid var(--red);
+    border-right:1px solid var(--border-strong);
+    background:var(--pq-bg);
+    padding:2rem 2.5rem; margin:2.5rem 0;
+    position:relative; transition:background .3s;
+  }
+  .pq::before {
+    content:'\201C';
+    position:absolute; top:-.4rem; left:1.4rem;
+    font-family:'Playfair Display',serif;
+    font-size:4.2rem; color:var(--red);
+    line-height:1; opacity:.7;
+  }
+  .pq blockquote {
+    font-family:'Playfair Display',serif;
+    font-style:italic; font-size:1.13rem;
+    line-height:1.64; color:var(--pq-text);
+    padding-top:1rem; transition:color .3s;
+  }
+  .pq cite {
+    display:block; margin-top:1rem;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.66rem; letter-spacing:.2em;
+    text-transform:uppercase; color:var(--amber);
+    font-style:normal;
+  }
+
+  /* Fact box */
+  .fb {
+    background:var(--factbox-bg);
+    border:1px solid var(--border-strong);
+    border-top:4px solid var(--amber);
+    padding:1.75rem 2rem; margin:2.5rem 0;
+    position:relative; transition:background .3s;
+  }
+  .fb::before {
+    content:''; position:absolute; inset:0;
+    background:repeating-linear-gradient(0deg,transparent,transparent 24px,rgba(200,134,26,.03) 24px,rgba(200,134,26,.03) 25px);
+    pointer-events:none;
+  }
+  .fb-ttl {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.6rem; letter-spacing:.4em;
+    text-transform:uppercase; color:var(--amber);
+    margin-bottom:1rem;
+    display:flex; align-items:center; gap:.75rem;
+  }
+  .fb-ttl::after { content:''; flex:1; height:1px; background:var(--amber); opacity:.32; }
+  .fb ul { list-style:none; padding:0; }
+  .fb ul li {
+    font-size:.92rem; color:var(--text-second);
+    line-height:1.62; padding:.48rem 0 .48rem 1.4rem;
+    border-bottom:1px dashed var(--border-main);
+    position:relative; transition:color .3s;
+  }
+  .fb ul li::before { content:'◆'; position:absolute; left:0; color:var(--amber); font-size:.46rem; top:.8rem; }
+  .fb ul li:last-child { border-bottom:none; }
+  .fb ul li strong { color:var(--amber-lt); }
+
+  /* Timeline */
+  .tl { margin:2.5rem 0; position:relative; padding-left:2rem; }
+  .tl::before {
+    content:''; position:absolute; left:.5rem; top:0; bottom:0;
+    width:2px; background:linear-gradient(180deg,var(--amber),var(--red),transparent);
+  }
+  .tl-item {
+    position:relative; margin-bottom:1.65rem;
+    padding-left:1.5rem;
+    animation:fadeLeft .6s ease both;
+  }
+  .tl-item::before {
+    content:''; position:absolute; left:-1.63rem; top:.36rem;
+    width:10px; height:10px; border-radius:50%;
+    background:var(--amber); border:2px solid var(--bg-page);
+    box-shadow:0 0 7px rgba(200,134,26,.5);
+    transition:background .3s, border-color .3s;
+  }
+  .tl-yr {
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.6rem; letter-spacing:.3em;
+    color:var(--amber); text-transform:uppercase;
+    margin-bottom:.22rem;
+  }
+  .tl-txt { font-size:.92rem; color:var(--text-second); line-height:1.62; margin:0; transition:color .3s; }
+
+  /* Gelar grid */
+  .gg {
+    display:grid; grid-template-columns:1fr 1fr;
+    gap:1px; background:var(--border-strong);
+    border:1px solid var(--border-strong);
+    margin:2.5rem 0; overflow:hidden;
+  }
+  .gg-hdr {
+    background:var(--hdr-bg); padding:.68rem 1.2rem;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.35em;
+    text-transform:uppercase; color:var(--amber);
+    text-align:center; transition:background .3s;
+  }
+  .gg-cell { background:var(--cell-bg); padding:1rem 1.2rem; transition:background .3s; }
+  .gg-name {
+    font-family:'Playfair Display',serif;
+    font-size:1.02rem; font-style:italic;
+    color:var(--amber-lt); margin-bottom:.26rem;
+  }
+  .gg-desc { font-size:.82rem; color:var(--text-muted); line-height:1.5; margin:0; transition:color .3s; }
+
+  /* Callout badge */
+  .badge {
+    display:inline-block; background:var(--red);
+    color:#f5e9cc;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.3em;
+    text-transform:uppercase; padding:.26rem .7rem;
+    margin-bottom:1rem; position:relative;
+  }
+  .badge::after {
+    content:''; position:absolute;
+    right:-8px; top:0; width:0; height:0;
+    border-left:8px solid var(--red);
+    border-top:11px solid transparent;
+    border-bottom:11px solid transparent;
+  }
+
+  /* Vintage frame */
+  .vf { border:2px solid var(--border-strong); padding:5px; margin:2.5rem auto; position:relative; max-width:500px; }
+  .vf::before { content:''; position:absolute; inset:3px; border:1px solid var(--border-main); pointer-events:none; z-index:1; }
+  .vf-in {
+    background:var(--vframe-bg);
+    padding:2.4rem 2rem; text-align:center;
+    font-family:'IM Fell English',serif; font-style:italic;
+    color:var(--amber); font-size:.92rem; line-height:1.65;
+    transition:background .3s;
+  }
+  .vf-in small { color:var(--text-muted); }
+  .vf-cap {
+    text-align:center;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.25em;
+    text-transform:uppercase; color:var(--amber);
+    opacity:.58; margin-top:.48rem;
+  }
+
+  /* Stamp */
+  .stamp {
+    display:inline-block;
+    border:3px solid var(--amber);
+    padding:.62rem 1.2rem;
+    font-family:'Josefin Sans',sans-serif;
+    font-size:.56rem; letter-spacing:.3em;
+    text-transform:uppercase; color:var(--amber);
+    transform:rotate(-2deg); opacity:.62; margin:1rem 0;
+    box-shadow:inset 0 0 0 1px rgba(200,134,26,.18), 3px 3px 0 rgba(200,134,26,.13);
+  }
+
+  /* Highlights */
+  .hl  { background:linear-gradient(180deg,transparent 60%,var(--hl-bg) 60%);  color:var(--text-primary); }
+  .hlr { background:linear-gradient(180deg,transparent 60%,var(--hl-red) 60%); color:var(--text-primary); }
+
+  /* Flourish */
+  .flr { text-align:center; color:var(--amber); font-size:1.3rem; opacity:.42; letter-spacing:.5rem; margin:2rem 0; }
+
+  /* References footer */
+  .refs {
+    background:var(--ref-bg);
+    border-top:3px double var(--amber);
+    padding:3rem 2rem 2rem; margin-top:4rem;
+    transition:background .3s;
+  }
+  .refs-in { max-width:800px; margin:0 auto; }
+  .ref-orn { text-align:center; font-family:'Playfair Display',serif; font-size:1.7rem; color:var(--amber); opacity:.38; letter-spacing:.5rem; margin-bottom:1.4rem; }
+  .refs h4 { font-family:'Josefin Sans',sans-serif; font-size:.56rem; letter-spacing:.4em; text-transform:uppercase; color:var(--amber); margin-bottom:1rem; }
+  .refs ul { list-style:none; }
+  .refs ul li { font-size:.79rem; color:var(--text-muted); padding:.28rem 0 .28rem 1rem; border-bottom:1px dashed var(--border-main); position:relative; line-height:1.52; transition:color .3s; }
+  .refs ul li::before { content:'—'; position:absolute; left:0; color:var(--amber); opacity:.48; }
+  .refs ul li a { color:var(--amber); text-decoration:none; }
+  .refs ul li a:hover { text-decoration:underline; }
+  .refs-copy { margin-top:1.4rem; text-align:center; font-family:'Josefin Sans',sans-serif; font-size:.56rem; letter-spacing:.2em; color:var(--amber); opacity:.38; }
+
+  /* Scroll reveal */
+  .rv { opacity:0; transform:translateY(22px); transition:opacity .7s ease,transform .7s ease; }
+  .rv.on { opacity:1; transform:translateY(0); }
+
+  /* Animations */
+  @keyframes fadeUp  { from{opacity:0;transform:translateY(26px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes fadeLeft{ from{opacity:0;transform:translateX(-16px)} to{opacity:1;transform:translateX(0)} }
+
+  /* Responsive */
+  @media(max-width:600px){
+    .gg { grid-template-columns:1fr; }
+    .ms-title { font-size:2.1rem; }
+    .pq { padding:1.5rem 1.2rem; }
+    .co { width:65px; height:65px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Corner ornaments -->
+<div class="co tl"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L95 5M5 5L5 95" stroke="#c8861a" stroke-width="2"/><circle cx="5" cy="5" r="3" fill="#c8861a"/><path d="M30 5Q50 30 5 50" stroke="#c8861a" stroke-width="1" fill="none" opacity="0.6"/><path d="M5 30Q30 50 50 5" stroke="#c8861a" stroke-width="0.5" fill="none" opacity="0.3"/><circle cx="30" cy="5" r="2" fill="#c8861a" opacity="0.6"/><circle cx="5" cy="30" r="2" fill="#c8861a" opacity="0.6"/></svg></div>
+<div class="co tr"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L95 5M5 5L5 95" stroke="#c8861a" stroke-width="2"/><circle cx="5" cy="5" r="3" fill="#c8861a"/><path d="M30 5Q50 30 5 50" stroke="#c8861a" stroke-width="1" fill="none" opacity="0.6"/><circle cx="30" cy="5" r="2" fill="#c8861a" opacity="0.6"/><circle cx="5" cy="30" r="2" fill="#c8861a" opacity="0.6"/></svg></div>
+<div class="co bl"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L95 5M5 5L5 95" stroke="#c8861a" stroke-width="2"/><circle cx="5" cy="5" r="3" fill="#c8861a"/><path d="M30 5Q50 30 5 50" stroke="#c8861a" stroke-width="1" fill="none" opacity="0.6"/><circle cx="30" cy="5" r="2" fill="#c8861a" opacity="0.6"/><circle cx="5" cy="30" r="2" fill="#c8861a" opacity="0.6"/></svg></div>
+<div class="co br"><svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 5L95 5M5 5L5 95" stroke="#c8861a" stroke-width="2"/><circle cx="5" cy="5" r="3" fill="#c8861a"/><path d="M30 5Q50 30 5 50" stroke="#c8861a" stroke-width="1" fill="none" opacity="0.6"/><circle cx="30" cy="5" r="2" fill="#c8861a" opacity="0.6"/><circle cx="5" cy="30" r="2" fill="#c8861a" opacity="0.6"/></svg></div>
+
+<!-- Masthead artikel -->
+<header class="masthead">
+  <p class="ms-label">Kajian Sejarah &amp; Budaya Nusantara</p>
+  <h1 class="ms-title">Gelar <em>Andi</em></h1>
+  <div class="ms-rule"><span></span><div class="dia"></div><span></span><div class="dia"></div><span></span></div>
+  <p class="ms-sub">Jejak Kolonial yang Menjadi Mahkota Identitas Bugis-Makassar</p>
+  <p class="ms-meta">◆ &nbsp; Sulawesi Selatan, Hindia Belanda, Abad XX &nbsp; ◆</p>
+</header>
+
+<!-- Hero band -->
+<div class="hero">
+  <p class="hero-q">"Mengapa kata <em>adinda</em> — sapaan sederhana seorang adik kepada kakak — berubah menjadi lambang kebangsawanan tertinggi di bawah bayang-bayang kolonial?"</p>
+  <p class="hero-sub">◆ &nbsp; Sebuah paradoks sejarah dari Sulawesi Selatan &nbsp; ◆</p>
+</div>
+
+<!-- Artikel -->
+<div class="wrap">
+  <article class="body">
+
+    <div class="rv">
+      <span class="ch-lbl">Bab I — Pembuka</span>
+      <h2 class="ch-title">Ketika Nama Menjadi Alat Kekuasaan</h2>
+      <p class="dc">Di antara ribuan nama yang tersebar di penjuru Sulawesi Selatan, tiga huruf kecil ini — <em>A-n-d-i</em> — menyimpan sejarah yang jauh lebih kompleks dari sekadar gelar kehormatan. Bagi masyarakat Bugis-Makassar hari ini, awalan itu adalah penanda darah biru, tanda bahwa seseorang mewarisi silsilah raja-raja yang perkasa.</p>
+      <p>Namun benarkah demikian? Atau justru kata "Andi" adalah sebuah konstruksi kolonial — sebuah label yang diciptakan oleh tangan-tangan asing untuk mengklasifikasikan, mengurutkan, dan pada akhirnya mengontrol struktur sosial masyarakat yang mereka jajah?</p>
+    </div>
+
+    <div class="div rv"><div class="ln"></div><div class="orn">❧</div><div class="ln"></div></div>
+
+    <div class="rv">
+      <span class="ch-lbl">Bab II — Konteks Kolonial</span>
+      <h2 class="ch-title">Sulawesi di Bawah Pax Neerlandica</h2>
+      <p>Setelah berhasil menaklukkan Kerajaan Gowa melalui Perjanjian Bongaya pada 1667, Belanda secara bertahap memperluas cengkeramannya di Sulawesi Selatan. Memasuki abad ke-20, ketika sistem pemerintahan kolonial berjalan penuh, mereka membutuhkan sesuatu yang tidak bisa disediakan oleh tentara: <strong>tenaga-tenaga terdidik</strong> untuk mengisi roda birokrasi.</p>
+      <p>Maka didirikanlah sekolah-sekolah elite di Makassar. Bukan untuk semua orang — hanya bagi mereka yang bisa membuktikan darah bangsawan melalui dokumen silsilah yang disebut <em>stamboom</em>, disertai pernyataan kesetiaan kepada Pemerintah Hindia Belanda.</p>
+    </div>
+
+    <div class="fb rv">
+      <div class="fb-ttl">Sekolah-Sekolah Elite Kolonial di Makassar</div>
+      <ul>
+        <li><strong>OSVIA</strong> — Opleiding School Voor Inlandsche Ambtenaren. Berdiri 17 Oktober 1910. Mencetak calon pejabat pamong praja dari kalangan bangsawan.</li>
+        <li><strong>MULO</strong> — Meer Uitgebreid Lager Onderwijs. Setara sekolah menengah pertama.</li>
+        <li><strong>HIS</strong> — Hollandsch-Inlandsche School. Sekolah dasar berbahasa Belanda untuk kalangan terpilih.</li>
+        <li><strong>AMS</strong> — Algemene Middelbare School. Setara sekolah menengah atas.</li>
+        <li>Syarat masuk: <strong>stamboom</strong> (daftar silsilah keturunan) + surat pernyataan kesetiaan kepada Hindia Belanda.</li>
+      </ul>
+    </div>
+
+    <div class="div rv"><div class="ln"></div><div class="orn">❧</div><div class="ln"></div></div>
+
+    <div class="rv">
+      <span class="ch-lbl">Bab III — Tokoh Kunci</span>
+      <h2 class="ch-title">B.F. Matthes: Misionaris, Filolog, dan Arsitek Gelar</h2>
+      <p>Benjamin Frederick Matthes tiba di Makassar pada 20 Desember 1848. Lulusan Sastra Semitik dan Teologi Universitas Leiden ini diutus oleh <em>Nederlandsch Bijbelgenootschap</em> untuk mempelajari bahasa Bugis-Makassar sekaligus menerjemahkan Alkitab. Ia kemudian mendirikan OSVIA — sekolah pamong praja khusus putra-putra bangsawan.</p>
+      <p>Dalam rangka menerapkan sistem klasifikasi sosial ala Jawa (<em>Standen Stelsel</em>) di Sulawesi Selatan, Matthes mulai memberikan <strong>titel "Andi"</strong> kepada semua golongan bangsawan dalam jangkauan Departemen Pendidikan dan Kebudayaan kolonial.</p>
+    </div>
+
+    <div class="pq rv">
+      <blockquote>"Matthes hendak menulis Standen Stelsel di Zuid Celebes seperti yang sudah ada di Jawa. Maka, sebagai awal usahanya itu, mulailah dia memberikan titel Andi kepada semua golongan bangsawan yang berada dalam jangkauan Departement O &amp; E."</blockquote>
+      <cite>— Ince Nurdin, tokoh bangsawan Makassar &amp; mantan guru OSVIA, dikutip dalam Mattalatta, <em>Meniti Siri dan Harga Diri</em> (2003)</cite>
+    </div>
+
+    <div class="vf rv">
+      <div class="vf-in">
+        ✦ &nbsp; Catatan Arsip &nbsp; ✦<br><br>
+        Gedung OSVIA Makassar<br>
+        Berdiri sejak 17 Oktober 1910<br>
+        berdasarkan Surat Keputusan Pemerintah Belanda<br>
+        No. 5, tertanggal 10 Agustus 1910<br><br>
+        <small>Kini bekas gedungnya berdiri sebagai<br>Kantor Dinas Pariwisata Pemprov Sulsel</small>
+      </div>
+      <p class="vf-cap">Sumber: Balai Pelestarian Cagar Budaya Makassar</p>
+    </div>
+
+    <div class="div rv"><div class="ln"></div><div class="orn">❧</div><div class="ln"></div></div>
+
+    <div class="rv">
+      <span class="ch-lbl">Bab IV — Etimologi</span>
+      <h2 class="ch-title">Dari Mana Datangnya Kata <em>"Andi"</em>?</h2>
+      <p>Hal yang paling menarik — dan sering luput dari perhatian — adalah bahwa kata "Andi" bukanlah kata yang diciptakan dari nol oleh Matthes. Kata itu sudah ada dalam kosakata Bugis sehari-hari, jauh sebelum kolonialisme datang.</p>
+      <p>Dalam bahasa Bugis, <em>"andi"</em> adalah kata sapaan yang berarti <strong class="hl">"adik"</strong> atau <strong class="hl">"adinda"</strong>. Ini dikonfirmasi oleh Andi Mattalatta sendiri, mantan Panglima Kodam XIV Hasanuddin, yang namanya justru menjadi salah satu dokumentasi resmi awal penggunaan gelar ini.</p>
+    </div>
+
+    <div class="pq rv">
+      <blockquote>"Sebenarnya, Andi bukanlah titel tingkatan derajat kebangsawanan. Andi itu kata panggilan atau sapaan dari seseorang yang lebih muda usianya kepada yang lebih tua. Terjemahan bebasnya adalah <em>adinda</em>."</blockquote>
+      <cite>— Andi Mattalatta, Panglima Kodam XIV Hasanuddin (1957–1959), dalam <em>Meniti Siri dan Harga Diri: Catatan dan Kenangan</em></cite>
+    </div>
+
+    <div class="rv">
+      <p>Matthes mengambil kata yang sudah familier di telinga masyarakat Bugis, lalu mengangkatnya menjadi penanda resmi dalam sistem birokrasi kolonial. Ironi sejarah pun terjadi: kata yang secara harfiah berarti "adik" berubah menjadi lambang tertinggi kebangsawanan yang dikejar dan dibanggakan.</p>
+    </div>
+
+    <div class="rv">
+      <span class="badge">Perbandingan Gelar</span>
+      <div class="gg">
+        <div class="gg-hdr">Gelar Tradisional (Pra-Kolonial)</div>
+        <div class="gg-hdr">Gelar Kolonial (Post-1910)</div>
+        <div class="gg-cell"><div class="gg-name">La / I</div><p class="gg-desc">Awalan nama laki-laki bangsawan sejak era kerajaan Bugis kuno.</p></div>
+        <div class="gg-cell"><div class="gg-name">Andi</div><p class="gg-desc">Diperkenalkan Belanda awal abad XX untuk bangsawan berpendidikan kolonial.</p></div>
+        <div class="gg-cell"><div class="gg-name">We</div><p class="gg-desc">Awalan nama perempuan bangsawan dalam tradisi Bugis kuno.</p></div>
+        <div class="gg-cell"><div class="gg-name">Andi (perempuan)</div><p class="gg-desc">Diberikan pula kepada perempuan bangsawan terpelajar dalam sistem kolonial.</p></div>
+        <div class="gg-cell"><div class="gg-name">Opu / Daeng / Karaeng</div><p class="gg-desc">Gelar kebangsawanan asli yang diwariskan secara adat, berbeda per wilayah.</p></div>
+        <div class="gg-cell"><div class="gg-name">Arung / Puang / Bau'</div><p class="gg-desc">Gelar tradisional untuk pemimpin wilayah. Tetap digunakan hingga kini.</p></div>
+      </div>
+    </div>
+
+    <div class="div rv"><div class="ln"></div><div class="orn">❧</div><div class="ln"></div></div>
+
+    <div class="rv">
+      <span class="ch-lbl">Bab V — Kronik</span>
+      <h2 class="ch-title">Linimasa Gelar <em>Andi</em></h2>
+    </div>
+
+    <div class="tl rv">
+      <div class="tl-item"><div class="tl-yr">1667</div><p class="tl-txt">Perjanjian Bongaya: Belanda menundukkan Kerajaan Gowa. Awal intervensi kolonial di Sulawesi Selatan.</p></div>
+      <div class="tl-item"><div class="tl-yr">1848</div><p class="tl-txt">B.F. Matthes tiba di Makassar, ditugaskan mempelajari sastra Bugis-Makassar dan menerjemahkan Alkitab.</p></div>
+      <div class="tl-item"><div class="tl-yr">1852</div><p class="tl-txt">Matthes bertemu Colliq Pujie di Tanete. Keduanya mulai mendokumentasikan epik I La Galigo.</p></div>
+      <div class="tl-item"><div class="tl-yr">1872</div><p class="tl-txt">Naskah I La Galigo setebal 2.850 halaman folio rampung. Kini tersimpan di Universitas Leiden sebagai Warisan Dunia UNESCO.</p></div>
+      <div class="tl-item"><div class="tl-yr">1910</div><p class="tl-txt">OSVIA resmi berdiri di Makassar (SK Pemerintah Belanda No. 5, 10 Agustus 1910). Gelar "Andi" mulai diberikan kepada lulusan bangsawan.</p></div>
+      <div class="tl-item"><div class="tl-yr">1929</div><p class="tl-txt">Andi Mattalatta mendaftar ke Openbare Schakelschool Makassar. Kepala sekolah Muhayyang Daeng Ngawing membubuhkan "Andi" di depan namanya.</p></div>
+      <div class="tl-item"><div class="tl-yr">1930-an</div><p class="tl-txt">Prof. Mattulada (Unhas) mencatat penggunaan gelar "Andi" meluas; diadopsi para kepala swapraja dan keluarga bangsawan sebagai penanda identitas keturunan raja.</p></div>
+      <div class="tl-item"><div class="tl-yr">Kini</div><p class="tl-txt">Gelar "Andi" terus diwariskan turun-temurun sebagai bagian dari identitas budaya Bugis-Makassar — meski asal-usulnya adalah konstruksi kolonial.</p></div>
+    </div>
+
+    <div class="div rv"><div class="ln"></div><div class="orn">❧</div><div class="ln"></div></div>
+
+    <div class="rv">
+      <span class="ch-lbl">Penutup — Refleksi</span>
+      <h2 class="ch-title">Warisan yang Berlapis</h2>
+      <p>Kisah gelar "Andi" adalah cermin dari bagaimana kekuasaan kolonial bekerja: bukan hanya dengan senjata dan pajak, tetapi dengan <em class="hlr">rekayasa identitas</em>. Dengan memberikan sebuah label, Belanda menciptakan hierarki baru yang lebih mudah dikendalikan — dan hierarki itu akhirnya diadopsi, dihayati, dan diwariskan oleh masyarakat yang semula menjadi objeknya.</p>
+      <p>Bahwa kata "Andi" ternyata bukan ciptaan baru melainkan kata Bugis asli yang bermakna "adinda" justru menambah kedalaman ironi ini. Matthes tidak perlu menciptakan bahasa baru — ia cukup merekayasa makna dari bahasa yang sudah ada.</p>
+      <p>Dan kini, "Andi" bukan lagi milik kolonialisme. Ia telah menjadi milik jutaan orang Bugis-Makassar yang memakainya dengan bangga sebagai tanda identitas, kekeluargaan, dan sejarah panjang yang — betapapun berliku asal-usulnya — tetap merupakan bagian dari siapa mereka.</p>
+    </div>
+
+    <div class="flr rv">✦ &nbsp;&nbsp; ✦ &nbsp;&nbsp; ✦</div>
+    <div style="text-align:center" class="rv"><div class="stamp">Sumber Terverifikasi &amp; Dikaji Ulang</div></div>
+
+  </article>
+</div>
+
+<!-- Referensi -->
+<div class="refs">
+  <div class="refs-in">
+    <div class="ref-orn">— ✦ —</div>
+    <h4>Sumber &amp; Referensi</h4>
+    <ul>
+      <li>Mattulada (1998). <em>Sejarah, Masyarakat, dan Kebudayaan Sulawesi Selatan.</em> Hasanuddin University Press, Makassar.</li>
+      <li>Mattalatta, Andi (2003). <em>Meniti Siri dan Harga Diri: Catatan dan Kenangan.</em> Khasanah Manusia Nusantara, Jakarta.</li>
+      <li>Rusdianto, Eko. "Asal Usul Gelar Andi di Sulawesi Selatan." <em>Historia.id</em>, 2019. <a href="https://www.historia.id/article/asal-usul-gelar-andi-di-sulawesi-selatan-vyb4b" target="_blank" rel="noopener">↗</a></li>
+      <li>Balai Pelestarian Cagar Budaya Makassar — Data historis OSVIA Makassar (SK Pemerintah Belanda No. 5, 10 Agustus 1910).</li>
+      <li>Wikipedia Indonesia: "Andi (gelar)." <a href="https://id.wikipedia.org/wiki/Andi_(gelar)" target="_blank" rel="noopener">↗</a></li>
+      <li>Firman Saleh (Budayawan Unhas). Dikutip dalam Detik Sulsel, "Perbedaan Daeng dan Andi," 2023. <a href="https://www.detik.com/sulsel/budaya/d-6712692/perbedaan-daeng-dan-andi-ternyata-salah-satunya-bukan-gelar-bangsawan" target="_blank" rel="noopener">↗</a></li>
+      <li>IDN Times Sulsel: "Perjuangan Gigih BF Matthes dan Colliq Pujie Bukukan I La Galigo," 2023.</li>
+    </ul>
+    <p class="refs-copy">◆ &nbsp; Artikel edukasi sejarah — KBDI &nbsp; ◆ &nbsp; Konten berdasarkan sumber akademik &amp; jurnalisme sejarah &nbsp; ◆</p>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     KBDI Header & Footer — dimuat via fetch
+     Sesuai petunjuk project
+═══════════════════════════════════════════ -->
+<script>
+  const savedTheme = localStorage.getItem('kbdi-theme');
+  if (savedTheme === 'light') document.documentElement.classList.add('light');
+
+  fetch('https://edukbdi.github.io/header.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('afterbegin', html);
+      const header = document.getElementById('kbdi-header');
+      if (savedTheme === 'light') header.classList.add('kbdi-light');
+      document.getElementById('kbdiThemeToggle').addEventListener('click', function() {
+        const isLight = document.documentElement.classList.toggle('light');
+        header.classList.toggle('kbdi-light', isLight);
+        localStorage.setItem('kbdi-theme', isLight ? 'light' : 'dark');
+        const footer = document.getElementById('kbdi-footer');
+        if (footer) footer.classList.toggle('kbdi-light', isLight);
+      });
+    });
+
+  fetch('https://edukbdi.github.io/footer.html')
+    .then(r => r.text())
+    .then(html => {
+      document.body.insertAdjacentHTML('beforeend', html);
+      const footer = document.getElementById('kbdi-footer');
+      if (footer && savedTheme === 'light') footer.classList.add('kbdi-light');
+    });
+</script>
+
+<script>
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  document.querySelectorAll('.rv').forEach(el => obs.observe(el));
+
+  // Timeline stagger
+  document.querySelectorAll('.tl-item').forEach((el, i) => {
+    el.style.animationDelay = `${i * 0.1}s`;
+  });
+</script>
+</body>
+</html>
